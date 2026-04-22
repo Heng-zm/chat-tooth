@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>CFBundleDisplayName</key>
+    <string>BT SecureChat</string>
+    <key>CFBundleIdentifier</key>
+    <string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
+    <key>CFBundleShortVersionString</key>
+    <string>$(FLUTTER_BUILD_NAME)</string>
+    <key>CFBundleVersion</key>
+    <string>$(FLUTTER_BUILD_NUMBER)</string>
+    <key>LSRequiresIPhoneOS</key>
+    <true/>
+
+    <!-- 1. Bluetooth Permissions -->
+    <key>NSBluetoothAlwaysUsageDescription</key>
+    <string>We use Bluetooth to discover and connect to nearby devices for encrypted offline messaging.</string>
+    <key>NSBluetoothPeripheralUsageDescription</key>
+    <string>We need Bluetooth access to communicate with nearby devices.</string>
+
+    <!-- 2. Location Permissions (Required for Bluetooth Discovery) -->
+    <key>NSLocationWhenInUseUsageDescription</key>
+    <string>Location access is required by iOS to scan for nearby Bluetooth hardware.</string>
+    <key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+    <string>Background location allows us to maintain the secure chat connection while the app is in the background.</string>
+
+    <!-- 3. Camera & Microphone (For sharing media) -->
+    <key>NSCameraUsageDescription</key>
+    <string>We need camera access to take secure photos and videos within the chat.</string>
+    <key>NSMicrophoneUsageDescription</key>
+    <string>Microphone access is required for recording and sending secure voice messages.</string>
+
+    <!-- 4. Photo Library (For sharing existing files) -->
+    <key>NSPhotoLibraryUsageDescription</key>
+    <string>Access to your photo library allows you to send images and videos to your contacts.</string>
+    <key>NSPhotoLibraryAddUsageDescription</key>
+    <string>We need permission to save photos received from the chat into your gallery.</string>
+
+    <!-- 5. Network (Internet is allowed by default, but we block HTTP for security) -->
+    <key>NSAppTransportSecurity</key>
+    <dict>
+        <key>NSAllowsArbitraryLoads</key>
+        <false/>
+    </dict>
+
+    <!-- Background Modes -->
+    <key>UIBackgroundModes</key>
+    <array>
+        <string>bluetooth-central</string>
+        <string>bluetooth-peripheral</string>
+    </array>
+
+    <!-- Performance & Appearance -->
+    <key>CADisableMinimumFrameDurationOnPhone</key>
+    <true/>
+    <key>UIUserInterfaceStyle</key>
+    <string>Dark</string>
+    <key>UILaunchStoryboardName</key>
+    <string>LaunchScreen</string>
+    <key>UIMainStoryboardFile</key>
+    <string>Main</string>
+</dict>
+</plist>
